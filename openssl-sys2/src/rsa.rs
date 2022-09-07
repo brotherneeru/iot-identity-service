@@ -49,3 +49,5 @@ extern "C" {
         ) -> std::os::raw::c_int,
     ) -> std::os::raw::c_int;
 }
+
+pub const RSA_FLAG_FIPS_METHOD: std::os::raw::c_int = 0x400;

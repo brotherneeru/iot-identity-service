@@ -51,7 +51,7 @@ pub(super) unsafe fn aziot_key_rsa_method() -> *const openssl_sys::RSA_METHOD {
         let openssl_rsa_method = openssl_sys2::RSA_get_default_method();
         let aziot_key_rsa_method = openssl_sys2::RSA_meth_dup(openssl_rsa_method);
 
-        openssl_sys2::RSA_meth_set_flags(aziot_key_rsa_method, 0);
+        openssl_sys2::RSA_meth_set_flags(aziot_key_rsa_method, openssl_sys2::RSA_FLAG_FIPS_METHOD);
 
         // Don't override openssl's RSA signing function (via RSA_meth_set_sign).
         // Let it compute the digest, and only override the final step to encrypt that digest.
