@@ -50,4 +50,4 @@ extern "C" {
     ) -> std::os::raw::c_int;
 }
 
-pub const RSA_FLAG_FIPS_METHOD: std::os::raw::c_int = 0x400;
+pub const RSA_FLAG_FIPS_METHOD: std::os::raw::c_int = 0x0400;
